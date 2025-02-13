@@ -10,11 +10,21 @@ public class Time {
     }
 
     public Time(int ore, int minuti, int secondi){
+        if(minuti > 60 || secondi > 60){
+            this.ore = 0;
+            this.minuti = 0;
+            this.secondi = 0;
+        }else{
+            this.ore = ore;
+            this.minuti = minuti;
+            this.secondi = secondi;
+        }
 
     }
 
     public int getOre(){
         return ore;
+
     }
 
     public int getMinuti(){
@@ -22,14 +32,17 @@ public class Time {
     }
     public int getSecondi(){
         return secondi;
+
     }
 
     public void setOre(int ore){
 
     }
 
-    public void setMinuti(int minuti){
+    @Deprecated
+    public void setMinuti(int minuti){ 
         this.minuti = minuti;
+
     }
     public void setSecondi(int secondi){
 
@@ -41,10 +54,11 @@ public class Time {
 
     public int convertiSecondi(){
         return getOre()*3600 + getMinuti()*60 + getSecondi();
+
     }
 
     @Override
     public String toString() {
-
+        return getOre() + ":" + getMinuti() + ":" + getSecondi();
     }
 }
