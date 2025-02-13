@@ -1,4 +1,4 @@
-package com;
+package com.example;
 
 public class Time {
     protected int ore;
@@ -14,14 +14,14 @@ public class Time {
     }
 
     public int getOre(){
-
+        return ore;
     }
 
     public int getMinuti(){
 
     }
     public int getSecondi(){
-
+        return secondi;
     }
 
     public void setOre(int ore){
@@ -29,7 +29,7 @@ public class Time {
     }
 
     public void setMinuti(int minuti){
-
+        this.minuti = minuti;
     }
     public void setSecondi(int secondi){
 
@@ -40,6 +40,7 @@ public class Time {
     }
 
     public int convertiSecondi(){
+        return getOre()*3600 + getMinuti()*60 + getSecondi();
     }
 
     @Override
